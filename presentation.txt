@@ -1,0 +1,103 @@
+GEtting started with Unit testing with laravel
+
+
+INTRODUCTION:
+
+Laravel is built with testing in mind. In fact, support for testing with 
+PHPUnit is included out of the box and a phpunit.xml
+
+
+First of all for unit test we have to installed PHPUNIT to run a unit test...
+
+
+Easiest way to install phpunit via composer is to run from project root.
+
+composer global require --dev phpunit/phpunit
+
+What this would do is, it will create a phpunit folder inside vendor/bin and you can run unit tests like this..
+
+$ ./vendor/bin/phpunit
+
+Structure of unit testing :
+
+under the test directory contains two directories
+
+
+
+FEATURE:
+
+ Feature tests may test a larger portion of your code, including how several objects interact
+ 	with each other or even a full HTTP request to a JSON endpoint
+
+UNIT:
+	
+	Unit tests are tests that focus on a very small, isolated portion of your code
+		 In fact, most unit tests probably focus on a single method
+
+we already have ExampleTest.php in the folder but
+
+we will learn how to create the new file
+
+
+"""php artisan make:test UserTest --unit""""  for making in the unit folder
+
+
+php artisan make:test UserTest""" for feature folder
+
+
+**your file name must be prefix with a Test and in the end
+
+
+NOW , to test your file we have command
+
+"./vendor/bin/phpunit" must be in qoute
+
+or
+
+php artisan test
+
+ab method mn jo assertTrue hy uskay functon k andar true or false krky dhik hana  phr btae ga kay kay ik test fail hy or knsi line mn hay
+or knsi file mn 
+
+"./vendor/bin/phpunit" must be in qoute
+
+or
+
+php artisan test
+
+
+php artisan test wali say agr error aega tw cmnd line wahen stop hjae ga bki test file ko nhi dhaikay ga, lkn vendor wali say sray test file run hungi 
+
+
+TEST HTTP SERVICE AND URL
+
+
+we will write the url in route and then test without opening in the browser.
+
+
+pics of method for route
+
+
+what does assertStatus(200);
+	
+	'it show that returned response should have the given http status code'
+
+what are http status code:
+
+	HTTP response status codes indicate whether a specific HTTP request has been successfully completed.
+
+HERE WE PASS ""'200 OK	The request is OK'"".
+
+Responses are grouped in five classes:
+
+Informational responses (100–199),
+Successful responses (200–299),
+Redirects (300–399),
+Client errors (400–499),
+and Server errors (500–599).
+
+
+then we will pass 404 which is not found then it will not give error.
+
+
+HTTP request and response
